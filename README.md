@@ -6,27 +6,44 @@ The Matrix Calculator project aims to create a versatile and user-friendly tool 
 # 2. Objectives
 The main objectives of the Matrix Calculator project include.
 
-## Matrix Operations: 
+ Matrix Operations: 
 Implement functions for basic matrix operations, including addition, subtraction, scalar multiplication, matrix multiplication, transposition, and determinant calculation
 
 
 # 3. Features
 The Matrix Calculator will include the following features:
 
-## Addition and Subtraction: 
+ 1. Addition and Subtraction: 
 Perform addition and subtraction of two matrices.
 
-## Scalar Multiplication: 
+2. Scalar Multiplication: 
 Multiply a matrix by a scalar.
 
-##Matrix Multiplication: 
+3. Matrix Multiplication: 
 Multiply two matrices.
 
-## Transposition: 
+4. Transposition: 
 Calculate the transpose of a matrix.
 
-## Determinant Calculation: 
+5. Determinant Calculation: 
 Find the determinant of a square matrix.
 
-## User-Friendly Interface: 
+6. User-Friendly Interface: 
 Provide a clear and interactive interface for users to input matrices and select operations.
+
+
+# 4. Deliverables
+The project will be delivered as a Python script with the following components:
+
+1. Matrix Calculator Module: The core module containing functions for matrix operations.
+
+2. User Interface Module: A module handling user input, interaction, and displaying results.
+
+3. Code Repository: The project will be hosted on a version control system (e.g., GitHub) for collaboration and version tracking.
+
+
+# Team Members:
+1. MD. SOHANOOR RAHAMAN SAKIN
+   Reg: 2021331008
+2. JUYENA AKTER
+   Reg: 2021331036
