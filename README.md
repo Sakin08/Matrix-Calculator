@@ -1,7 +1,6 @@
 # Matrix-Calculator
-Calculator
 
-1. Introduction
+#1. Introduction
 The Matrix Calculator project aims to create a versatile and user-friendly tool for performing various matrix operations. Matrices are fundamental in numerous fields, including mathematics, physics, computer science, and engineering. This project will provide a platform to perform operations such as addition, subtraction, scalar multiplication, matrix multiplication, transposition, and determinant calculation.
 
 2. Objectives
