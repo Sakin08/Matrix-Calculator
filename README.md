@@ -43,7 +43,7 @@ The project will be delivered as a Python script with the following components:
 
 
 # Team Members:
-1. MD. SOHANOOR RAHAMAN SAKIN
+1. MD. SOHANOOR RAHAMAN SAKIN 
    Reg: 2021331008
-2. JUYENA AKTER
+2. JUYENA AKTER 
    Reg: 2021331036
