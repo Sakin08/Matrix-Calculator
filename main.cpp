@@ -154,6 +154,23 @@ vector<vector<int>> transposeMatrix(const vector<vector<int>>& mat) {
     return transpose;
 }
 
+//  determinant 
+double determinantMatrix(const vector<vector<int>>& mat) {
+    int size = mat.size();
+
+    if (size == 1) {
+        return mat[0][0];
+    }
+
+    double det = 0.0;
+
+    for (int i = 0; i < size; i++) {
+        vector<vector<int>> minor = minorMatrix(mat, 0, i);
+        det += (i % 2 == 0 ? 1 : -1) * mat[0][i] * determinantMatrix(minor);
+    }
+
+    return det;
+}
 
 
 using namespace std;
