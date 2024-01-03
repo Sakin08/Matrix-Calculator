@@ -275,7 +275,30 @@ void displayResult(const vector<vector<int>>& result) {
 
 using namespace std;
 int main() {
+ int choice;
 
+    do {
+        cout << "=======================\n";
+        cout << "MATRIX OPERATIONS\n";
+        cout << "=======================\n";
+        cout << " [1] ADDITION\n";
+        cout << " [2] SUBTRACTION\n";
+        cout << " [3] MULTIPLICATION\n";
+        cout << " [4] INVERSE\n";
+        cout << " [5] TRANSPOSE\n";
+        cout << " [6] DETERMINANT\n";
+        cout << " [7] RANK\n";
+        cout << " [8] LU DECOMPOSITION\n";
+        cout << " [9] TRACE\n";
+        cout << " [10] MULTIPLY MATRIX BY SCALAR\n";
+        cout << " [0] EXIT\n";
+        cout << "=======================\n";
+        cin >> choice;
+
+        if (choice == 0) {
+            // Exit the loop and end the program
+            break;
+        }
   
       return 0;
 }
