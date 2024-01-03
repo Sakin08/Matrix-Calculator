@@ -299,6 +299,44 @@ int main() {
             // Exit the loop and end the program
             break;
         }
+            int rows, cols;
+        cout << "Enter the number of rows and columns for the matrices: ";
+        cin >> rows >> cols;
+
+        vector<vector<int>> matrix1(rows, vector<int>(cols));
+        vector<vector<int>> matrix2(rows, vector<int>(cols));
+
+        cout << "Enter the elements of Matrix 1:" << endl;
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                cin >> matrix1[i][j];
+            }
+        }
+
+        if (choice == 1 || choice == 2 || choice == 3) {
+            int rows2, cols2;
+            cout << "Enter the number of rows and columns for the second matrix: ";
+            cin >> rows2 >> cols2;
+
+            matrix2.resize(rows2, vector<int>(cols2));
+
+            if ((choice == 1 || choice == 2) && (rows != rows2 || cols != cols2)) {
+                cout << "Invalid matrix operation: Matrices must have the same dimensions." << endl;
+                continue;
+            }
+
+            if (choice == 3 && cols != rows2) {
+                cout << "Invalid matrix multiplication: Number of columns in matrix1 must be equal to the number of rows in matrix2." << endl;
+                continue;
+            }
+
+            cout << "Enter the elements of Matrix 2:" << endl;
+            for (int i = 0; i < rows2; i++) {
+                for (int j = 0; j < cols2; j++) {
+                    cin >> matrix2[i][j];
+                }
+            }
+        }
   
       return 0;
 }
