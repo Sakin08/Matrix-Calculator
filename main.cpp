@@ -204,6 +204,32 @@ int findMatrixRank(vector<vector<int>>& matrix) {
     return rank;
 }
 
+void luDecomposition(const vector<vector<int>>& A, vector<vector<int>>& L, vector<vector<int>>& U) {
+    int n = A.size();
+
+    L = vector<vector<int>>(n, vector<int>(n, 0));
+    U = A;
+
+    for (int k = 0; k < n; ++k) {
+        L[k][k] = 1; 
+
+        if (U[k][k] == 0) {
+            cout << "LU decomposition is not possible (zero pivot)." << endl;
+            return;
+        }
+
+        for (int i = k + 1; i < n; ++i) {
+            int factor = U[i][k] / U[k][k];
+            L[i][k] = factor;
+
+            for (int j = k; j < n; ++j) {
+                U[i][j] -= factor * U[k][j];
+            }
+        }
+    }
+}
+
+
 using namespace std;
 int main() {
 
