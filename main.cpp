@@ -68,6 +68,45 @@ vector<vector<int>> multiplyMatrices(const vector<vector<int>>& matrix1, const v
     return result;
 }
 
+vector<vector<double>> inverseMatrix(const vector<vector<int>>& mat) {
+    int size = mat.size();
+    vector<vector<double>> augmentedMatrix(size, vector<double>(2 * size, 0));
+
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size; j++) {
+            augmentedMatrix[i][j] = mat[i][j];
+            augmentedMatrix[i][j + size] = (i == j) ? 1 : 0;
+        }
+    }
+
+    for (int i = 0; i < size; i++) {
+        double pivot = augmentedMatrix[i][i];
+
+        for (int j = 0; j < 2 * size; j++) {
+            augmentedMatrix[i][j] /= pivot;
+        }
+
+        for (int k = 0; k < size; k++) {
+            if (k != i) {
+                double factor = augmentedMatrix[k][i];
+                for (int j = 0; j < 2 * size; j++) {
+                    augmentedMatrix[k][j] -= factor * augmentedMatrix[i][j];
+                }
+            }
+        }
+    }
+
+    // extract the inverse matrix 
+    vector<vector<double>> inverse(size, vector<double>(size, 0));
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size; j++) {
+            inverse[i][j] = augmentedMatrix[i][j + size];
+        }
+    }
+
+    return inverse;
+}
+
 
 using namespace std;
 int main() {
