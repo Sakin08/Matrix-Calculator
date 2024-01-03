@@ -337,6 +337,134 @@ int main() {
                 }
             }
         }
-  
-      return 0;
+
+                vector<vector<int>> result;
+        double determinantResult;
+        vector<vector<int>> L, U;
+
+        switch (choice) {
+            // ... (existing cases)
+
+            case 0:
+                // Exit the loop and end the program
+                break;
+
+            case 1:
+            result = addMatrices(matrix1, matrix2);
+            break;
+        case 2:
+            result = subtractMatrices(matrix1, matrix2);
+            break;
+        case 3:
+            result = multiplyMatrices(matrix1, matrix2);
+            break;
+
+        case 4:
+
+            if (rows == cols) {
+                vector<vector<double>> result = inverseMatrix(matrix1);
+
+                cout << "Inverse Matrix:" << endl;
+                for (const auto &row : result) {
+                    for (double val : row) {
+                        cout << val << " ";
+                    }
+                    cout << endl;
+                }
+            } else {
+                cout << "Invalid choice! Please enter a square matrix for inversion." << endl;
+                return 1;
+            }
+            break;
+        
+
+        case 5:
+              {
+
+            vector<vector<int>> result = transposeMatrix(matrix1);
+
+
+            cout << "Transposed Matrix:" << endl;
+            for (const auto& row : result) {
+                for (int val : row) {
+                    cout << val << " ";
+                }
+                cout << endl;
+            }
+            break;
+        }
+
+        
+         case 6:
+
+            if (rows == cols) {
+                determinantResult = determinantMatrix(matrix1);
+                cout << "Determinant: " << determinantResult << endl;
+            } else {
+                cout << "Invalid choice! Please enter a square matrix for determinant calculation." << endl;
+                return 1;
+            }
+            break;
+        case 7:
+            cout<< "Rank is:"<<findMatrixRank(matrix1)<<endl;
+            break;
+    
+        case 8:
+
+            luDecomposition(matrix1, L, U);
+
+            cout << "Matrix L:" << endl;
+            for (const auto& row : L) {
+                for (int val : row) {
+                    cout << val << " ";
+                }
+                cout << endl;
+            }
+
+            cout << "\nMatrix U:" << endl;
+            for (const auto& row : U) {
+                for (int val : row) {
+                    cout << val << " ";
+                }
+                cout << endl;
+            }
+            break;
+
+        case 9:
+             cout << "Trace: " << matrixTrace(matrix1) << endl;
+            break;
+    
+         case 10: {
+            int scalar;
+            cout << "Enter the scalar for multiplication: ";
+            cin >> scalar;
+
+            vector<vector<int>> result = multiplyMatrixByScalar(matrix1, scalar);
+
+            cout << "Matrix multiplied by " << scalar << ":\n";
+            for (const auto& row : result) {
+                for (int value : row) {
+                    cout << value << " ";
+                }
+                cout << endl;
+            }
+            break;
+        }
+         
+           
+        default:
+            cout << "Invalid choice! Please enter a number between 1 and 3." << endl;
+            return 1;
+    }    
+
+
+
+        if (choice != 0) {
+            displayResult(result);
+        }
+
+    } while (choice != 0);
+
+    return 0;
+
 }
