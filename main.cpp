@@ -263,6 +263,16 @@ vector<vector<int>> multiplyMatrixByScalar(const vector<vector<int>>& matrix, in
     return result;
 }
 
+void displayResult(const vector<vector<int>>& result) {
+    cout << "Resultant Matrix:" << endl;
+    for (const auto& row : result) {
+        for (int val : row) {
+            cout << val << " ";
+        }
+        cout << endl;
+    }
+}
+
 using namespace std;
 int main() {
 
