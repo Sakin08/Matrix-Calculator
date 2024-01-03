@@ -107,6 +107,31 @@ vector<vector<double>> inverseMatrix(const vector<vector<int>>& mat) {
     return inverse;
 }
 
+// minor calculate
+vector<vector<int>> minorMatrix(const vector<vector<int>>& mat, int row, int col) {
+    int rows = mat.size();
+    int cols = mat[0].size();
+
+    vector<vector<int>> minor(rows - 1, vector<int>(cols - 1));
+
+    for (int i = 0, r = 0; i < rows; ++i) {
+        if (i == row) {
+            continue; 
+        }
+
+        for (int j = 0, c = 0; j < cols; ++j) {
+            if (j == col) {
+                continue; 
+            }
+
+            minor[r][c++] = mat[i][j];
+        }
+
+        ++r;
+    }
+
+    return minor;
+}
 
 using namespace std;
 int main() {
