@@ -133,6 +133,29 @@ vector<vector<int>> minorMatrix(const vector<vector<int>>& mat, int row, int col
     return minor;
 }
 
+//transpose
+vector<vector<int>> transposeMatrix(const vector<vector<int>>& mat) {
+    int rows = mat.size();
+    int cols = (rows > 0) ? mat[0].size() : 0;
+
+    if (rows == 0 || cols == 0) {
+        cout << "Error: Cannot transpose an empty matrix." << endl;
+        return {};
+    }
+
+    vector<vector<int>> transpose(cols, vector<int>(rows, 0));
+
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            transpose[j][i] = mat[i][j];
+        }
+    }
+
+    return transpose;
+}
+
+
+
 using namespace std;
 int main() {
 
