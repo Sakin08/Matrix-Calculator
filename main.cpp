@@ -173,6 +173,37 @@ double determinantMatrix(const vector<vector<int>>& mat) {
 }
 
 
+//rank
+int findMatrixRank(vector<vector<int>>& matrix) {
+    int rowCount = matrix.size();
+    int colCount = matrix[0].size();
+
+    int rank = 0;
+    for (int i = 0; i < rowCount; i++) {
+        int pivotRow = i;
+        while (pivotRow < rowCount && matrix[pivotRow][i] == 0) {
+            pivotRow++;
+        }
+
+        if (pivotRow < rowCount) {
+            swap(matrix[i], matrix[pivotRow]);
+
+            for (int j = 0; j < rowCount; j++) {
+                if (j != i) {
+                    double ratio = matrix[j][i] / matrix[i][i];
+                    for (int k = i; k < colCount; k++) {
+                        matrix[j][k] -= ratio * matrix[i][k];
+                    }
+                }
+            }
+
+            rank++;
+        }
+    }
+
+    return rank;
+}
+
 using namespace std;
 int main() {
 
