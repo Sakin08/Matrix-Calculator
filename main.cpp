@@ -11,6 +11,16 @@ vector<vector<int>> addMatrices(const vector<vector<int>>& matrix1, const vector
         cout << "Invalid matrix addition: Matrices must have the same dimensions." << endl;
         return {};
     }
+    vector<vector<int>> result(rows1, vector<int>(cols1, 0));
+
+    for (int i = 0; i < rows1; ++i) {
+        for (int j = 0; j < cols1; ++j) {
+            result[i][j] = matrix1[i][j] + matrix2[i][j];
+        }
+    }
+
+    return result;
+}
 
 using namespace std;
 int main() {
